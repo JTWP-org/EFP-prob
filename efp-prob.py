@@ -5,7 +5,6 @@ from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 from pavlov import PavlovRCON
 
-
 class MyHandler(FileSystemEventHandler):
     def __init__(self, rcon_ip, rcon_port, rcon_pass):
         self.rcon_ip = rcon_ip
@@ -26,33 +25,30 @@ class MyHandler(FileSystemEventHandler):
 
             asyncio.run(send_rcon_command(filename_without_extension, self.rcon_ip, self.rcon_port, self.rcon_pass))
 
-
 async def send_rcon_command(filename, rcon_ip, rcon_port, rcon_pass):
     pavlov = PavlovRCON(rcon_ip, rcon_port, rcon_pass)
     data = await pavlov.send(f"GiveCash {filename}")
-    data1 = await pavlov.send(f"disconnect")
-    pavlov.close()
-    
-    
     print(data)
 
+# Base path
+base_path = '/home/steam/pavlovserver/Pavlov/Saved/Config/'
 
+# Construct the specific paths
+monitor_path = os.path.join(base_path, 'ModSave/')
+path_to_rcon_settings = os.path.join(base_path, 'RconSettings.txt')
+
+# RCON server details
 rcon_ip = "127.0.0.1"  # Set server IP for RCON
 rcon_port = ""
 rcon_pass = ""
 
-
-path_to_rcon_settings = '/home/steam/pavlovserver/Pavlov/Saved/Config/RconSettings.txt'
+# Read RconSettings file to get the port and password
 with open(path_to_rcon_settings, 'r') as file:
     for line in file:
         if 'Password=' in line:
             rcon_pass = line.strip().split('=')[1]
         elif 'Port=' in line:
             rcon_port = line.strip().split('=')[1]
-
-
-monitor_path = '/home/steam/pavlovserver/Pavlov/Saved/Config/ModSave/'
-
 
 if __name__ == "__main__":
     event_handler = MyHandler(rcon_ip, rcon_port, rcon_pass)
