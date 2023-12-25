@@ -18,9 +18,14 @@ pip install async-pavlov
 
 pip install watchdog
 ```
-
+running the script 
+assuming u have a pythin env setup uu just install and run with 
+```
+python3 efp-prob.py
+```
 
 In the Main Block
+what its doing ?
 
     Initialization of MyHandler:
         An instance of the MyHandler class is created with RCON details (rcon_ip, rcon_port, rcon_pass). These details are read from the RconSettings.txt file before entering the main block.
