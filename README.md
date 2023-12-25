@@ -14,5 +14,6 @@ the rest it will find on its own
 <h2>install</h2>
 ```
 pip install async-pavlov
+
 pip install watchdog
 ```
