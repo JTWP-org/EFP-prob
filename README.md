@@ -4,9 +4,9 @@ u need to set 2 variables in the py
 base_path = '/home/steam/pavlovserver/Pavlov/Saved/Config/'
 rcon_ip = "127.0.0.1"  # Set server IP for RCON
 ```
-the rest it will find on its own 
+<p>the rest it will find on its own 
 running the script 
-assuming u have a pythin env setup u just install and run with 
+assuming u have a python env setup u just install and run with </p>
 ```python3 efp-prob.py```
 
 
