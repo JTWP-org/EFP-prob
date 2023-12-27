@@ -11,7 +11,7 @@ async def main():
 
     ARG = sys.argv[1]
 
-    pavlov = PavlovRCON("127.0.0.1", 9000, "HNXb7PVs4CFni2goxcDFswh1xge5cvl")
+    pavlov = PavlovRCON("127.0.0.1", 9000, "null")
     data = await pavlov.send(ARG)
     print(data)
 
