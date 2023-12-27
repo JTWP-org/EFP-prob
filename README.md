@@ -17,6 +17,10 @@ pip install async-pavlov
 
 pip install watchdog
 ```
+get repo 
+```
+git clone https://github.com/JTWP-org/EFP-prob.git
+```
 
 ```
 python3 efp-prob.py
