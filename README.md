@@ -1,14 +1,18 @@
 u need to set 2 variables in the py 
-```
-# Base path
-base_path = '/home/steam/pavlovserver/Pavlov/Saved/Config/'
-rcon_ip = "127.0.0.1"  # Set server IP for RCON
-```
+
 <p>the rest it will find on its own 
 running the script 
 assuming u have a python env setup u just install and run with </p>
 ```python3 efp-prob.py```
 
+
+edit variables in cfg.py
+```
+# Base path
+rcon_ip = "127.0.0.1"
+serverlocation = "/home/steam/pavlovserver000"
+# do not add / after server folder 
+```
 
 <h2>install</h2>
 
@@ -21,7 +25,7 @@ get repo
 ```
 git clone https://github.com/JTWP-org/EFP-prob.git
 ```
-
+run code 
 ```
 python3 efp-prob.py
 ```
