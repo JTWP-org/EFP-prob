@@ -4,6 +4,8 @@ import asyncio
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 from pavlov import PavlovRCON
+from cfg import rcon_ip, serverlocation
+
 
 class MyHandler(FileSystemEventHandler):
     def __init__(self, rcon_ip, rcon_port, rcon_pass):
@@ -30,15 +32,17 @@ async def send_rcon_command(filename, rcon_ip, rcon_port, rcon_pass):
     data = await pavlov.send(f"GiveCash {filename}")
     print(data)
 
+
+
 # Base path
-base_path = '/home/steam/pavlovserver/Pavlov/Saved/Config/'
+base_path = f'{serverlocation}/Pavlov/Saved/Config/'
 
 # Construct the specific paths
 monitor_path = os.path.join(base_path, 'ModSave/')
 path_to_rcon_settings = os.path.join(base_path, 'RconSettings.txt')
 
 # RCON server details
-rcon_ip = "127.0.0.1"  # Set server IP for RCON
+
 rcon_port = ""
 rcon_pass = ""
 
