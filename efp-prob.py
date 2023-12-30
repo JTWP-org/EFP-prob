@@ -29,7 +29,7 @@ class MyHandler(FileSystemEventHandler):
 
 async def send_rcon_command(filename, rcon_ip, rcon_port, rcon_pass):
     pavlov = PavlovRCON(rcon_ip, rcon_port, rcon_pass)
-    data = await pavlov.send(f"GiveCash {filename}")
+    data = await pavlov.send(f"SetCash {filename} 0")
     print(data)
 
 
